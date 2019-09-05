@@ -8,6 +8,9 @@ from .forms import ProdutoForm
 
 
 def produto_list(request):
+    '''
+    Trata uma requisição web e recupera os produtos renderizando em um html
+    '''
     template_name = 'produto_list.html'
     objects = Produto.objects.all()
     search = request.GET.get('search')
@@ -18,12 +21,17 @@ def produto_list(request):
 
 
 class ProdutoList(ListView):
+    '''
+    Exibe os produtos, a cada 10 registros
+    '''
     model = Produto
     template_name = 'produto_list.html'
     paginate_by = 10
 
-
 def produto_detail(request, pk):
+    '''
+    Permite a alteracao de um produto
+    '''
     template_name = 'produto_detail.html'
     obj = Produto.objects.get(pk=pk)
     context = {'object': obj}
@@ -31,24 +39,35 @@ def produto_detail(request, pk):
 
 
 def produto_add(request):
+    '''
+    Trata uma requisição web e exibe um form para cadastro de produto
+    '''
     template_name = 'produto_form.html'
     return render(request, template_name)
 
 
 class ProdutoCreate(CreateView):
+    '''
+    Cria o form para adicao de novos produtos
+    '''
     model = Produto
     template_name = 'produto_form.html'
     form_class = ProdutoForm
 
 
 class ProdutoUpdate(UpdateView):
+    '''
+    Cria o form para alteracao produtos
+    '''
     model = Produto
     template_name = 'produto_form.html'
     form_class = ProdutoForm
 
 
 def produto_json(request, pk):
-    ''' Retorna o produto, id e quantidade. '''
+    ''' 
+    Retorna o produto, id e quantidade. 
+    '''
     produto = Produto.objects.filter(pk=pk)
     data = [item.to_dict_json() for item in produto]
     return JsonResponse({'data': data})

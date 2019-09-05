@@ -1,6 +1,6 @@
 from django.db import models
 
-
+'''
 class TimeStampedModel(models.Model):
     created = models.DateTimeField(
         'criado em',
@@ -15,3 +15,4 @@ class TimeStampedModel(models.Model):
 
     class Meta:
         abstract = True
+'''
