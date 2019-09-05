@@ -6,7 +6,7 @@ class Produto(models.Model):
     disponivel = models.BooleanField(default=True)    
     produto = models.CharField(max_length=100, unique=True)
     preco = models.DecimalField('preço', max_digits=7, decimal_places=2)
-    estoque = models.IntegerField('estoque atual')
+    quantidade = models.IntegerField('quantidade')
     
 
     class Meta:
@@ -22,5 +22,5 @@ class Produto(models.Model):
         return {
             'pk': self.pk,
             'produto': self.produto,
-            'estoque': self.estoque,
+            'quantidade': self.quantidade,
         }

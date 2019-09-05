@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('disponivel', models.BooleanField(default=False)),                
                 ('produto', models.CharField(max_length=100, unique=True)),
                 ('preco', models.DecimalField(decimal_places=2, max_digits=7, verbose_name='preço')),
-                ('estoque', models.IntegerField(verbose_name='estoque atual')),               
+                ('quantidade', models.IntegerField(verbose_name='quantidade atual')),               
             ],
             options={
                 'ordering': ('produto',),

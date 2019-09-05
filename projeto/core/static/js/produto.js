@@ -1,1 +1,1 @@
-$('#id_importado').removeClass('form-control');
+$('#disponivel').removeClass('form-control');
