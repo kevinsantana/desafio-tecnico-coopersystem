@@ -1,9 +1,0 @@
-Django
-django-bootstrap4
-django-extensions
-django-widget-tweaks
-python-decouple
-pytz
-six
-sqlparse
-postgresql

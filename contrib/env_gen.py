@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
-"""
-Django SECRET_KEY generator.
-"""
 from django.utils.crypto import get_random_string
 
+"""
+Método auxiliar para gerar senha secreta para o django, cria um arquivo oculto '.env'
+A partir do modulo decouple e possivel carregar o arquivo diretamente no settings.py do django
+"""
 
 chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
-
 CONFIG_STRING = """
 DEBUG=True
 SECRET_KEY=%s
