@@ -8,7 +8,7 @@ class ProdutoAdmin(admin.ModelAdmin):
         '__str__',
         'disponivel',        
         'preco',
-        'estoque',        
+        'quantidade',        
     )
     search_fields = ('produto',)
     list_filter = ('disponivel',)

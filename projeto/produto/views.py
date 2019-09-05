@@ -48,7 +48,7 @@ class ProdutoUpdate(UpdateView):
 
 
 def produto_json(request, pk):
-    ''' Retorna o produto, id e estoque. '''
+    ''' Retorna o produto, id e quantidade. '''
     produto = Produto.objects.filter(pk=pk)
     data = [item.to_dict_json() for item in produto]
     return JsonResponse({'data': data})
@@ -63,13 +63,13 @@ def save_data(data):
         produto = item.get('produto')        
         disponivel = True if item.get('disponivel') == 'True' else False
         preco = item.get('preco')
-        estoque = item.get('estoque')
+        quantidade = item.get('quantidade')
         
         obj = Produto(
             produto=produto,            
             disponivel=disponivel,
             preco=preco,
-            estoque=estoque,            
+            quantidade=quantidade,            
         )
         aux.append(obj)
     Produto.objects.bulk_create(aux)

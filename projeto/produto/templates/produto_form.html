@@ -4,6 +4,8 @@
 
 {% block content %}
 
+<!-- Form para adicionar produto -->
+
 <form method="POST" novalidate>
   {% csrf_token %}
   {% for field in form.visible_fields %}
