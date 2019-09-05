@@ -13,7 +13,7 @@ Controle de produtos e pedidos
 
 ```
 git clone https://github.com/kevinsantana/desafio-tecnico-coopersystem.git
-cd estoque
+cd desafio-tecnico-coopersystem
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
