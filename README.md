@@ -12,7 +12,7 @@ Controle de produtos e pedidos
 * Rode as migrações.
 
 ```
-git clone https://github.com/rg3915/estoque.git
+git clone https://github.com/kevinsantana/desafio-tecnico-coopersystem.git
 cd estoque
 python3 -m venv .venv
 source .venv/bin/activate
